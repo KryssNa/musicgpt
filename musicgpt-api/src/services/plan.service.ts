@@ -2,73 +2,174 @@ import { Plan } from '../models/plan.model';
 
 // In-memory database of subscription plans
 const plans: Plan[] = [
+
     {
-        id: 'plus',
-        name: 'Plus',
-        popular: false,
-        price: { monthly: 11.99, yearly: 9.99 },
-        features: {
-            monthly: [
-                { title: 'Generate 100 songs /month', description: 'Create up to 100 AI-generated songs per month' },
-                { title: 'Unlimited downloads', description: 'Download as many songs as you want' },
-                { title: 'Standard tool', description: 'Access to standard music creation tools' },
-                { title: 'Fast generation', description: 'Generate songs at standard speed' },
-                { title: 'Commercial use', description: 'Use generated music for commercial projects' },
-            ],
-            yearly: [
-                { title: 'Generate 3000 songs /year', description: 'Create up to 3000 AI-generated songs annually' },
-                { title: 'Limited downloads', description: 'Download up to 100 songs per month' },
-                { title: 'Basic features', description: 'Access to essential music creation tools' },
-                { title: 'Standard generation', description: 'Generate songs at standard speed' },
-                { title: 'Personal use', description: 'Use generated music for personal projects only' },
-            ],
+        "id": "plus",
+        "name": "Plus",
+        "popular": false,
+        "price": {
+            "monthly": 11.99,
+            "yearly": 9.99
         },
+        "features": {
+            "monthly": [
+                {
+                    "title": "Generate 100 songs /month",
+                    "description": "Create up to 100 AI-generated songs per month"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Standard tool",
+                    "description": "Access to standard music creation tools"
+                },
+                {
+                    "title": "Fastlane queue",
+                    "description": "Generate songs at standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects"
+                }
+            ],
+            "yearly": [
+                {
+                    "title": "Generate 1200 songs /year",
+                    "description": "Create up to 1200 AI-generated songs annually"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Standard tool",
+                    "description": "Access to standard music creation tools"
+                },
+                {
+                    "title": "Fastlane queue",
+                    "description": "Generate songs at standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects"
+                }
+            ]
+        }
     },
     {
-        id: 'pro',
-        name: 'Pro',
-        popular: true,
-        price: { monthly: 21.99, yearly: 16.99 },
-        features: {
-            monthly: [
-                { title: 'Generate 500 songs /month', description: 'Create up to 500 AI-generated songs per month' },
-                { title: 'Unlimited downloads', description: 'Download as many songs as you want' },
-                { title: 'Unlock all features', description: 'Access to all music creation tools and features' },
-                { title: 'Fast generation', description: 'Generate songs at 2x the standard speed' },
-                { title: 'Commercial use', description: 'Use generated music for commercial projects' },
-            ],
-            yearly: [
-                { title: 'Generate 6000 songs /year', description: 'Create up to 6000 AI-generated songs annually' },
-                { title: 'Unlimited downloads', description: 'Download as many songs as you want' },
-                { title: 'Unlock all features', description: 'Access to all music creation tools and features' },
-                { title: 'Fast generation', description: 'Generate songs at 2x the standard speed' },
-                { title: 'Commercial use', description: 'Use generated music for commercial projects' },
-            ],
+        "id": "pro",
+        "name": "Pro",
+        "popular": true,
+        "price": {
+            "monthly": 21.99,
+            "yearly": 16.99
         },
+        "features": {
+            "monthly": [
+                {
+                    "title": "Generate 500 songs /month",
+                    "description": "Create up to 500 AI-generated songs per month"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Unlock all features",
+                    "description": "Access to all music creation tools and features"
+                },
+                {
+                    "title": "Fast generation",
+                    "description": "Generate songs at 2x the standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects"
+                }
+            ],
+            "yearly": [
+                {
+                    "title": "Generate 6000 songs /year",
+                    "description": "Create up to 6000 AI-generated songs annually"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Unlock all features",
+                    "description": "Access to all music creation tools and features"
+                },
+                {
+                    "title": "Fast generation",
+                    "description": "Generate songs at 2x the standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects"
+                }
+            ]
+        }
     },
     {
-        id: 'ultra',
-        name: 'Ultra',
-        popular: false,
-        price: { monthly: 49.99, yearly: 29.99 },
-        features: {
-            monthly: [
-                { title: 'Generate 10000 songs /month', description: 'Create up to 10000 AI-generated songs monthly' },
-                { title: 'Unlimited downloads', description: 'Download as many songs as you want' },
-                { title: 'Unlock all features', description: 'Access to all music creation tools and features' },
-                { title: 'Fast generation', description: 'Generate songs at ultra-fast speed' },
-                { title: 'Commercial use', description: 'Use generated music for commercial projects' },
-            ],
-            yearly: [
-                { title: 'Unlimited songs /year', description: 'Create unlimited AI-generated songs annually' },
-                { title: 'Unlimited downloads', description: 'Download as many songs as you want' },
-                { title: 'Unlock all features', description: 'Access to all music creation tools and features' },
-                { title: 'Ultra-fast generation', description: 'Generate songs at 4x the standard speed' },
-                { title: 'Commercial use', description: 'Use generated music for commercial projects with extended rights' },
-            ],
+        "id": "ultra",
+        "name": "Ultra",
+        "popular": false,
+        "price": {
+            "monthly": 49.99,
+            "yearly": 29.99
         },
-    },
-];
+        "features": {
+            "monthly": [
+                {
+                    "title": "Unlimited generations",
+                    "description": "Create unlimited AI-generated songs annually"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Unlock all features",
+                    "description": "Access to all music creation tools and features"
+                },
+                {
+                    "title": "Fast generation",
+                    "description": "Generate songs at 4x the standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects with extended rights"
+                }
+            ],
+            "yearly": [
+                {
+                    "title": "Unlimited generations",
+                    "description": "Create unlimited AI-generated songs annually"
+                },
+                {
+                    "title": "Unlimited downloads",
+                    "description": "Download as many songs as you want"
+                },
+                {
+                    "title": "Unlock all features",
+                    "description": "Access to all music creation tools and features"
+                },
+                {
+                    "title": "Fast generation",
+                    "description": "Generate songs at 4x the standard speed"
+                },
+                {
+                    "title": "Commercial use",
+                    "description": "Use generated music for commercial projects with extended rights"
+                }
+            ]
+        }
+    }
+]
+
 
 /**
  * Get all subscription plans

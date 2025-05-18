@@ -4,10 +4,16 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
     CommercialDisplay,
+    CoreFeatures,
     DownloadsDisplay,
+    FastGen,
+    FastLaneQueue,
     FeaturesDisplay,
-    GenerationDisplay,
+    FiveThousandCredits,
     SongsDisplay,
+    TwentyFiveThousandCredits,
+    UnlimitedCredits,
+    UnlockAllFeatures
 } from "./components/FeatureDisplays";
 import ShimmerEffect from "./components/ShimmerEffect";
 import { fetchPlansWithFallback } from "./utils/fetchPlansWithFallback";
@@ -21,11 +27,18 @@ interface UpgradeModalProps {
 // Helper to map feature titles to display components
 function getFeatureComponent(title: string) {
     const lower = title.toLowerCase();
-    if (["generate 3000 songs /year", "generate 6000 songs /year", "generate 10000 songs /year"].includes(lower)) return SongsDisplay;
+    // if (["generate 3000 songs /year", "generate 6000 songs /year", "generate 10000 songs /year"].includes(lower)) return SongsDisplay;
+    if (lower.includes("1200 songs") || lower.includes("100 songs")) return FiveThousandCredits;
+    if (lower.includes("6000 songs") || lower.includes("500 songs")) return TwentyFiveThousandCredits;
+    if (lower.includes("unlimited generations")) return UnlimitedCredits;
+    if (lower.includes("standard tool")) return CoreFeatures;
+    if (lower.includes("unlock all")) return UnlockAllFeatures;
+    if (lower.includes("queue")) return FastLaneQueue;
+    if (lower.includes("generation")) return FastGen;
     if (lower.includes("download")) return DownloadsDisplay;
     if (lower.includes("unlock")) return FeaturesDisplay;
-    if (lower.includes("generation") && lower.includes("ultra")) return GenerationDisplay;
-    if (lower.includes("generation")) return GenerationDisplay;
+    // if (lower.includes("generation") && lower.includes("ultra")) return GenerationDisplay;
+    // if (lower.includes("generation")) return GenerationDisplay;
     if (lower.includes("commercial")) return CommercialDisplay;
     return undefined;
 }
@@ -137,7 +150,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                         exit={{ opacity: 0, x: -40, scale: 0.98, transition: { duration: 0.4, ease: "easeIn" } }}
                     >
                         <Image
-                            src="/assets/images/popup/default.svg"
+                            src="/assets/images/popup/default.png"
                             alt="Music Icon"
                             className="w-full h-full mb-4 object-cover"
                             width={400}
@@ -214,7 +227,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                         </motion.div>
                         {/* close button */}
                         <motion.button
-                            className="absolute top-8 right-4 sm:top-16 sm:right-8 z-10 md:hidden"
+                            className="absolute top-7 right-4 sm:top-16 sm:right-8 z-10 md:hidden"
                             onClick={onClose}
                         >
                             <XIcon className="w-6 h-6" />
