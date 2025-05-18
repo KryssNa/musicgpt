@@ -8,7 +8,6 @@ import {
     DownloadsDisplay,
     FastGen,
     FastLaneQueue,
-    FeaturesDisplay,
     FiveThousandCredits,
     TwentyFiveThousandCredits,
     UnlimitedCredits,
@@ -62,7 +61,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
 
                 try {
                     // Simulate network delay for shimmer effect demonstration
-                    await new Promise(resolve => setTimeout(resolve, 3000));
+                    await new Promise(resolve => setTimeout(resolve, 100));
 
                     const plans = await fetchPlansWithFallback();
                     setPlans(plans);

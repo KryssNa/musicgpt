@@ -2,7 +2,7 @@
 
 ## Overview
 
-MusicGPT subscription popup modal is created for take home assignment
+MusicGPT subscription popup modal is created for take home assessment
 
 ## Features
 

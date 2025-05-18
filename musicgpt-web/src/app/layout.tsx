@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MusicGpt Take home assignment",
-  description: "MusicGpt Take home assignment",
+  title: "MusicGpt Take home assessment",
+  description: "MusicGpt Take home assessment",
   icons: {
     icon: '/assets/icons/logo.svg',
   },
