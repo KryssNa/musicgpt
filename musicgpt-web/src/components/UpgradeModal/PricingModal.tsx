@@ -10,7 +10,6 @@ import {
     FastLaneQueue,
     FeaturesDisplay,
     FiveThousandCredits,
-    SongsDisplay,
     TwentyFiveThousandCredits,
     UnlimitedCredits,
     UnlockAllFeatures
@@ -27,7 +26,6 @@ interface UpgradeModalProps {
 // Helper to map feature titles to display components
 function getFeatureComponent(title: string) {
     const lower = title.toLowerCase();
-    // if (["generate 3000 songs /year", "generate 6000 songs /year", "generate 10000 songs /year"].includes(lower)) return SongsDisplay;
     if (lower.includes("1200 songs") || lower.includes("100 songs")) return FiveThousandCredits;
     if (lower.includes("6000 songs") || lower.includes("500 songs")) return TwentyFiveThousandCredits;
     if (lower.includes("unlimited generations")) return UnlimitedCredits;
@@ -37,8 +35,6 @@ function getFeatureComponent(title: string) {
     if (lower.includes("generation")) return FastGen;
     if (lower.includes("download")) return DownloadsDisplay;
     if (lower.includes("unlock")) return FeaturesDisplay;
-    // if (lower.includes("generation") && lower.includes("ultra")) return GenerationDisplay;
-    // if (lower.includes("generation")) return GenerationDisplay;
     if (lower.includes("commercial")) return CommercialDisplay;
     return undefined;
 }
@@ -419,14 +415,15 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                             {/* CTA Button */}
                             <motion.button
                                 className={`w-full py-4 sm:py-[17px] cursor-pointer ${loading || initialLoading ? 'bg-[#23272b]' : 'bg-white'} text-black rounded-xl font-semibold flex items-center justify-center gap-2 mt-4 sm:mt-0`}
-                                whileHover={{ scale: 1.03, boxShadow: '0 4px 24px rgba(255,255,255,0.08)' }}
+                                whileHover={{ scale: 1.03, }}
                                 whileTap={{ scale: 0.98 }}
                                 transition={{ type: 'spring', stiffness: 250 }}
                                 disabled={loading || initialLoading}
                                 onClick={() => window.open("https://www.musicgpt.com", "_blank")}
                             >
                                 {loading || initialLoading ? (
-                                    <ShimmerEffect className="w-48 h-6 rounded-full" />
+                                    <></>
+                                    // <ShimmerEffect className="w-48 h-6 rounded-full" />
                                 ) : (
                                     <>
                                         <span className="text-[15px] sm:text-[16px] font-semibold leading-[21px] text-[#16191c]">Unlock {selectedPlan.name} features</span>

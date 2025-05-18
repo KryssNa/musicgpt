@@ -8,25 +8,6 @@ const imageVariants = {
     exit: { opacity: 0, x: -40, scale: 0.98, transition: { duration: 0.4, ease: "easeIn" } },
 };
 
-// Display for song generation feature
-export const SongsDisplay = () => (
-    <motion.div className="w-full h-full"
-        variants={imageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-    >
-        <Image
-            src="/assets/images/popup/image1.svg"
-            alt="Music Icon"
-            className="w-full h-full mb-4 object-cover"
-            width={400}
-            height={220}
-            priority={true}
-            loading="eager"
-        />
-    </motion.div>
-);
 // Display for 5k credits feature
 export const FiveThousandCredits = () => (
     <motion.div className="w-full h-full"
@@ -76,7 +57,7 @@ export const UnlimitedCredits = () => (
         exit="exit"
     >
         <Image
-            src="/assets/images/popup/unlimitedCredit.png"
+            src="/assets/images/popup/unlimitedcredit.png"
             alt="Music Icon"
             className="w-full h-full mb-4 object-cover"
             width={400}
