@@ -57,7 +57,7 @@ export const UnlimitedCredits = () => (
         exit="exit"
     >
         <Image
-            src="/assets/images/popup/unlimitedcredit.png"
+            src="/assets/images/popup/unlimited_credit.png"
             alt="Music Icon"
             className="w-full h-full mb-4 object-cover"
             width={400}
@@ -76,7 +76,7 @@ export const StandardTool = () => (
         exit="exit"
     >
         <Image
-            src="/assets/images/popup/standard-tool.png"
+            src="/assets/images/popup/standard_tool.png"
             alt="Music Icon"
             className="w-full h-full mb-4 object-cover"
             width={400}
@@ -135,7 +135,7 @@ export const FastLaneQueue = () => (
         exit="exit"
     >
         <Image
-            src="/assets/images/popup/fastlan_ques.png"
+            src="/assets/images/popup/fastlane_queues.png"
             alt="Music Icon"
             className="w-full h-full mb-4 object-cover"
             width={400}
@@ -177,7 +177,7 @@ export const DownloadsDisplay = () => (
         exit="exit"
     >
         <Image
-            src="/assets/images/popup/unlimitedDownload.png"
+            src="/assets/images/popup/unlimited_download.png"
             alt="Music Icon"
             className="w-full h-full mb-4 object-cover"
             width={400}
@@ -188,45 +188,6 @@ export const DownloadsDisplay = () => (
     </motion.div>
 );
 
-// Display for unlock features
-export const FeaturesDisplay = () => (
-    <motion.div className="w-full h-full"
-        variants={imageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-    >
-        <Image
-            src="/assets/images/popup/image3.svg"
-            alt="Music Icon"
-            className="w-full h-full mb-4 object-cover"
-            width={400}
-            height={220}
-            priority={true}
-            loading="eager"
-        />
-    </motion.div>
-);
-
-// Display for advanced generation feature
-export const GenerationDisplay = () => (
-    <motion.div className="w-full h-full"
-        variants={imageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-    >
-        <Image
-            src="/assets/images/popup/image4.svg"
-            alt="Music Icon"
-            className="w-full h-full mb-4 object-cover"
-            width={400}
-            height={220}
-            priority={true}
-            loading="eager"
-        />
-    </motion.div>
-);
 
 // Display for commercial use feature
 export const CommercialDisplay = () => (

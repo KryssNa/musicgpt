@@ -34,7 +34,6 @@ function getFeatureComponent(title: string) {
     if (lower.includes("queue")) return FastLaneQueue;
     if (lower.includes("generation")) return FastGen;
     if (lower.includes("download")) return DownloadsDisplay;
-    if (lower.includes("unlock")) return FeaturesDisplay;
     if (lower.includes("commercial")) return CommercialDisplay;
     return undefined;
 }
