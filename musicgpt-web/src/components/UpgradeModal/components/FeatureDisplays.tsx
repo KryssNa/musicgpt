@@ -22,7 +22,8 @@ export const SongsDisplay = () => (
             className="w-full h-full mb-4 object-cover"
             width={400}
             height={220}
-            priority={false}
+            priority={true}
+            loading="eager"
         />
     </motion.div>
 );
@@ -41,7 +42,8 @@ export const DownloadsDisplay = () => (
             className="w-full h-full mb-4 object-cover"
             width={400}
             height={220}
-            priority={false}
+            priority={true}
+            loading="eager"
         />
     </motion.div>
 );
@@ -60,7 +62,8 @@ export const FeaturesDisplay = () => (
             className="w-full h-full mb-4 object-cover"
             width={400}
             height={220}
-            priority={false}
+            priority={true}
+            loading="eager"
         />
     </motion.div>
 );
@@ -79,7 +82,8 @@ export const GenerationDisplay = () => (
             className="w-full h-full mb-4 object-cover"
             width={400}
             height={220}
-            priority={false}
+            priority={true}
+            loading="eager"
         />
     </motion.div>
 );
@@ -98,7 +102,8 @@ export const CommercialDisplay = () => (
             className="w-full h-full mb-4 object-cover"
             width={400}
             height={220}
-            priority={false}
+            priority={true}
+            loading="eager"
         />
     </motion.div>
-); 
+);

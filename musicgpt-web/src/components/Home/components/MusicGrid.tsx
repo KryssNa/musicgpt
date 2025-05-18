@@ -77,7 +77,7 @@ const container = {
 const MusicGrid: React.FC = () => {
     return (
         <motion.div
-            className="flex overflow-x-auto gap-10 px-10 pb-4 hide-scrollbar"
+            className="flex overflow-x-auto gap-4 md:gap-10 px-2 md:px-10 pb-4 hide-scrollbar"
             variants={container}
             initial="hidden"
             animate="show"

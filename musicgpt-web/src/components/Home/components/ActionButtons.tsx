@@ -68,7 +68,7 @@ const container = {
 const ActionButtons: React.FC = () => {
   return (
     <motion.div
-      className="flex justify-center gap-2.5 sm:gap-4 md:gap-6 mt-5 px-2 sm:px-0 w-full max-w-4xl mx-auto overflow-x-auto hide-scrollbar"
+      className="flex justify-start md:justify-center gap-2.5 sm:gap-4 md:gap-6 mx-2 mt-5 sm:px-0 w-full overflow-x-auto hide-scrollbar"
       variants={container}
       initial="hidden"
       animate="show"

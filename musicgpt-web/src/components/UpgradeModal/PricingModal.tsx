@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { XIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -116,7 +117,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                     animate="animate"
                     exit="exit"
                 >
-                    <ShimmerEffect className="w-full h-full rounded-lg" />
+                    <ShimmerEffect className="w-full h-full max-md:rounded-t-lg md:rounded-l-lg" />
                 </motion.div>
             );
         }
@@ -183,7 +184,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
         <AnimatePresence>
             {open && (
                 <motion.div
-                    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-2 sm:px-0"
+                    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 pt-4 "
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } }}
                     exit={{ opacity: 0, transition: { duration: 0.2, ease: 'easeIn' } }}
@@ -194,7 +195,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                     }}
                 >
                     <motion.div
-                        className="flex flex-col sm:flex-row w-full max-w-[95vw] sm:max-w-[800px] h-full max-h-[95vh] sm:max-h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden bg-black shadow-xl"
+                        className="flex flex-col sm:flex-row w-full max-w-[94vw] md:max-w-[760px] lg:max-w-[800px] h-full max-h-[94vh] sm:max-h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden bg-black shadow-xl"
                         variants={containerVariants}
                         initial="initial"
                         animate="animate"
@@ -211,10 +212,17 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                         >
                             {renderLeftSide()}
                         </motion.div>
+                        {/* close button */}
+                        <motion.button
+                            className="absolute top-8 right-4 sm:top-16 sm:right-8 z-10 md:hidden"
+                            onClick={onClose}
+                        >
+                            <XIcon className="w-6 h-6" />
+                        </motion.button>
 
                         {/* Right side - Pricing */}
                         <motion.div
-                            className="w-full sm:w-[400px] bg-[#16191c] text-white px-4 sm:px-8 py-6 sm:py-12 flex flex-col justify-between relative overflow-y-auto max-h-[calc(95vh-32px)] sm:max-h-full max-md:rounded-b-xl"
+                            className="w-full sm:w-[400px] bg-[#16191c] text-white px-4 sm:px-8 py-4 sm:py-12 flex flex-col justify-between relative overflow-y-auto max-h-[calc(95vh-32px)] sm:max-h-full max-md:rounded-b-xl"
                             variants={rightSideVariants}
                             initial="initial"
                             animate="animate"
@@ -222,13 +230,14 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                         >
                             {/* Modal title */}
                             <motion.h2
-                                className="text-[22px] sm:text-[32px] font-semibold leading-tight sm:leading-[38.727px] text-[#e4e6e8] mb-4 sm:mb-6"
+                                className="text-[20px] sm:text-[32px] font-semibold leading-tight sm:leading-[38.727px] text-[#e4e6e8] mb-3 sm:mb-6"
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                             >
                                 Unlock the future of music.
                             </motion.h2>
+
 
                             {/* Plan Selection */}
                             <motion.div className="flex gap-2 sm:gap-3 pt-2 sm:pt-[9px] pb-6 sm:pb-[28px]">
@@ -250,6 +259,14 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                                         >
                                             <ShimmerEffect className="w-full h-[48px] sm:h-[60px] rounded-xl" />
                                         </motion.div>
+                                        <motion.div
+                                            className="flex-1"
+                                            initial={{ opacity: 0, y: 10 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.4, delay: 0.4 }}
+                                        >
+                                            <ShimmerEffect className="w-full h-[48px] sm:h-[60px] rounded-xl" />
+                                        </motion.div>
                                     </>
                                 ) :
                                     (plans.map((plan) => (
@@ -260,7 +277,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                                             key={plan.id} className="relative flex-1"
                                         >
                                             {plan.popular && (
-                                                <div className="absolute -top-2 left-[18px] flex justify-center max-w-[70px] max-h-[25px] z-10">
+                                                <div className="absolute -top-2 left-[20%] md:left-[18px] flex justify-center max-w-[70px] max-h-[25px] z-10">
                                                     <span className="px-3 py-0.5 bg-white text-black text-xs font-medium rounded-full">
                                                         Popular
                                                     </span>
@@ -325,7 +342,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                             </motion.div>
 
                             {/* Price */}
-                            <div className="flex flex-col sm:flex-row items-end justify-between gap-2">
+                            <div className="flex flex-col sm:flex-row items-start justify-between gap-2">
                                 {loading || initialLoading ? (
                                     renderPriceShimmer()
                                 ) : (
