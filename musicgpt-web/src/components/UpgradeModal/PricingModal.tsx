@@ -61,7 +61,7 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
 
                 try {
                     // Simulate network delay for shimmer effect demonstration
-                    await new Promise(resolve => setTimeout(resolve, 100));
+                    await new Promise(resolve => setTimeout(resolve, 1000));
 
                     const plans = await fetchPlansWithFallback();
                     setPlans(plans);

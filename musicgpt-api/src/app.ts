@@ -1,5 +1,5 @@
 import cors from 'cors';
-import express, { urlencoded } from 'express';
+import express from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'path';
@@ -40,6 +40,9 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // API versioning
 const API_VERSION = '/api/v1';
+
+//image routes
+app.use(`${API_VERSION}/uploads`, express.static(path.join(__dirname, '../uploads')));
 
 // Routes
 app.use(`${API_VERSION}/subscription-plans`, subscriptionPlanRoutes);
