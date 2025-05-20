@@ -2,17 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { XIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import {
-    CommercialDisplay,
-    CoreFeatures,
-    DownloadsDisplay,
-    FastGen,
-    FastLaneQueue,
-    FiveThousandCredits,
-    TwentyFiveThousandCredits,
-    UnlimitedCredits,
-    UnlockAllFeatures
-} from "./components/FeatureDisplays";
+import { FeatureDisplay } from "./components/FeatureDisplays";
 import ShimmerEffect from "./components/ShimmerEffect";
 import { fetchPlansWithFallback } from "./utils/fetchPlansWithFallback";
 
@@ -20,21 +10,6 @@ import { fetchPlansWithFallback } from "./utils/fetchPlansWithFallback";
 interface UpgradeModalProps {
     open: boolean; // Whether the modal is open
     onClose: () => void; // Function to close the modal
-}
-
-// Helper to map feature titles to display components
-function getFeatureComponent(title: string) {
-    const lower = title.toLowerCase();
-    if (lower.includes("1200 songs") || lower.includes("100 songs")) return FiveThousandCredits;
-    if (lower.includes("6000 songs") || lower.includes("500 songs")) return TwentyFiveThousandCredits;
-    if (lower.includes("unlimited generations")) return UnlimitedCredits;
-    if (lower.includes("standard tool")) return CoreFeatures;
-    if (lower.includes("unlock all")) return UnlockAllFeatures;
-    if (lower.includes("queue")) return FastLaneQueue;
-    if (lower.includes("generation")) return FastGen;
-    if (lower.includes("download")) return DownloadsDisplay;
-    if (lower.includes("commercial")) return CommercialDisplay;
-    return undefined;
 }
 
 // Main UpgradeModal component
@@ -51,6 +26,9 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
     const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('yearly');
     // Initial loading state for entrance animation
     const [initialLoading, setInitialLoading] = useState<boolean>(true);
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
+
 
     // Fetch plans when modal opens
     useEffect(() => {
@@ -103,12 +81,18 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
 
     // Get selected plan and its features
     const selectedPlan = !loading && plans.length ? plans.find((plan) => plan.id === selectedPlanId) || plans[0] : null;
-    const features = selectedPlan ? (selectedPlan.features?.[billingCycle] || []).map((f: { title: string; description: string }, i: number) => ({
-        id: f.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-        text: f.title,
-        description: f.description,
-        component: getFeatureComponent(f.title)
-    })) : [];
+    const features = selectedPlan ? (selectedPlan.features?.[billingCycle] || []).map((f: { title: string; description: string; image?: string }, i: number) => {
+        let imageUrl = f.image || "/assets/images/popup/default.png";
+        if (imageUrl && !imageUrl.startsWith('http') && !imageUrl.startsWith('https') && imageUrl.startsWith('/uploads/')) {
+            imageUrl = `${backendUrl}/api/v1${imageUrl}`;
+        }
+        return {
+            id: f.title.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
+            text: f.title,
+            description: f.description,
+            image: imageUrl
+        };
+    }) : [];
 
     // Get plan price for selected billing cycle
     const planPrice = selectedPlan?.price?.[billingCycle] || 0;
@@ -133,8 +117,8 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
         const feature = features.find((f: any) => f.id === hoveredFeature);
         return (
             <AnimatePresence mode="wait" initial={false}>
-                {feature && feature.component ? (
-                    <feature.component key={feature.id} />
+                {feature ? (
+                    <FeatureDisplay key={feature.id} image={feature.image} alt={feature.text} />
                 ) : (
                     <motion.div
                         key="default"
