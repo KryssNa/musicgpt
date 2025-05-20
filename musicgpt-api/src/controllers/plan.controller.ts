@@ -1,34 +1,27 @@
 import { NextFunction, Request, Response } from 'express';
 import asyncHandler from '../middleware/asyncHandler';
 import { getAllPlans, getPlanById } from '../services/plan.service';
+import { ApiNotFound, ApiSuccess } from '../utils/apiResponse';
 
 /**
- * @desc    Get all subscription plans
- * @route   GET /api/plans
- * @access  Public
+ * Fetches all available subscription plans
+ * Endpoint: GET /api/plans
+ * Public access
  */
-export const getPlans = asyncHandler(async (req: Request, res: Response) => {
-    res.status(200).json({
-        status: 200,
-        message: 'Plans fetched successfully',
-        data: getAllPlans(),
-    });
+export const getPlans = asyncHandler((req: Request, res: Response): void => {
+    new ApiSuccess('Subscription plans retrieved', getAllPlans()).send(res);
 });
 
 /**
- * @desc    Get a single subscription plan by ID
- * @route   GET /api/plans/:id
- * @access  Public
+ * Fetches a specific subscription plan by its ID
+ * Endpoint: GET /api/plans/:id
+ * Public access
  */
-export const getPlan = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+export const getPlan = asyncHandler((req: Request, res: Response, next: NextFunction): void => {
     const plan = getPlanById(req.params.id);
     if (!plan) {
-        res.status(404);
-        return next(new Error('Plan not found'));
+        new ApiNotFound('Requested plan does not exist').send(res);
+        return;
     }
-    res.status(200).json({
-        status: 200,
-        message: 'Plan fetched successfully',
-        data: plan,
-    });
-}); 
+    new ApiSuccess('Subscription plan retrieved', plan).send(res);
+});

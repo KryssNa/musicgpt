@@ -1,7 +1,8 @@
 import cors from 'cors';
-import express from 'express';
+import express, { urlencoded } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import path from 'path';
 import './config';
 import { ENV } from './config/env';
 import errorHandler from './middleware/errorHandler';
@@ -14,15 +15,28 @@ const app = express();
 app.use(helmet());
 
 // Enable CORS with configurable origin from environment variable
-app.use(cors({
-    origin: ENV.CORS_ORIGIN,
-}));
+const corsOptions = {
+    origin: function (origin: any, callback: any) {
+        if (!origin || ENV.CORS_ORIGIN.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true,
+};
+app.use(cors(corsOptions));
 
 // Parse JSON bodies
 app.use(express.json());
 
 // HTTP request logger
 app.use(morgan('dev'));
+
+// Serve static files from the public directory
+app.use(express.static(__dirname));
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // API versioning
 const API_VERSION = '/api/v1';

@@ -11,46 +11,66 @@
       "features": {
         "monthly": [
           {
+            "index": 1,
             "title": "Generate 100 songs /month",
-            "description": "Create up to 100 AI-generated songs per month"
+            "description": "Create up to 100 AI-generated songs per month",
+            "image": "/uploads/images/5kredit.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimited_download.png"
           },
           {
+            "index": 3,
             "title": "Standard tool",
-            "description": "Access to standard music creation tools"
+            "description": "Access to standard music creation tools",
+            "image": "/uploads/images/standardtool.png"
           },
           {
+            "index": 4,
             "title": "Fastlane queue",
-            "description": "Generate songs at standard speed"
+            "description": "Generate songs at standard speed",
+            "image": "/uploads/images/fastlane_queues.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects"
+            "description": "Use generated music for commercial projects",
+            "image": "/uploads/images/commercial_use.png"
           }
         ],
         "yearly": [
           {
+            "index": 1,
             "title": "Generate 1200 songs /year",
-            "description": "Create up to 1200 AI-generated songs annually"
+            "description": "Create up to 1200 AI-generated songs annually",
+            "image": "/uploads/images/5kcredit.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimited_download.png"
           },
           {
+            "index": 3,
             "title": "Standard tool",
-            "description": "Access to standard music creation tools"
+            "description": "Access to standard music creation tools",
+            "image": "/uploads/images/standard_tool.png"
           },
           {
+            "index": 4,
             "title": "Fastlane queue",
-            "description": "Generate songs at standard speed"
+            "description": "Generate songs at standard speed",
+            "image": "/uploads/images/fastlane_queues.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects"
+            "description": "Use generated music for commercial projects",
+            "image": "/uploads/images/commercial_use.png"
           }
         ]
       }
@@ -66,46 +86,66 @@
       "features": {
         "monthly": [
           {
+            "index": 1,
             "title": "Generate 500 songs /month",
-            "description": "Create up to 500 AI-generated songs per month"
+            "description": "Create up to 500 AI-generated songs per month",
+            "image": "/uploads/images/5kcredit.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimiteddownload.png"
           },
           {
+            "index": 3,
             "title": "Unlock all features",
-            "description": "Access to all music creation tools and features"
+            "description": "Access to all music creation tools and features",
+            "image": "/uploads/images/unlock_all_features.png"
           },
           {
+            "index": 4,
             "title": "Fast generation",
-            "description": "Generate songs at 2x the standard speed"
+            "description": "Generate songs at 2x the standard speed",
+            "image": "/uploads/images/fast_gen.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects"
+            "description": "Use generated music for commercial projects",
+            "image": "/uploads/images/commercial_use.png"
           }
         ],
         "yearly": [
           {
+            "index": 1,
             "title": "Generate 6000 songs /year",
-            "description": "Create up to 6000 AI-generated songs annually"
+            "description": "Create up to 6000 AI-generated songs annually",
+            "image": "/uploads/images/25kcredit.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimited_download.png"
           },
           {
+            "index": 3,
             "title": "Unlock all features",
-            "description": "Access to all music creation tools and features"
+            "description": "Access to all music creation tools and features",
+            "image": "/uploads/images/unlock_all_features.png"
           },
           {
+            "index": 4,
             "title": "Fast generation",
-            "description": "Generate songs at 2x the standard speed"
+            "description": "Generate songs at 2x the standard speed",
+            "image": "/uploads/images/fast_gen.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects"
+            "description": "Use generated music for commercial projects",
+            "image": "/uploads/images/commercial_use.png"
           }
         ]
       }
@@ -121,46 +161,66 @@
       "features": {
         "monthly": [
           {
+            "index": 1,
             "title": "Unlimited generations",
-            "description": "Create unlimited AI-generated songs annually"
+            "description": "Create unlimited AI-generated songs annually",
+            "image": "/uploads/images/unlimited_generations.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimited_download.png"
           },
           {
+            "index": 3,
             "title": "Unlock all features",
-            "description": "Access to all music creation tools and features"
+            "description": "Access to all music creation tools and features",
+            "image": "/uploads/images/unlock_all_features.png"
           },
           {
+            "index": 4,
             "title": "Fast generation",
-            "description": "Generate songs at 4x the standard speed"
+            "description": "Generate songs at 4x the standard speed",
+            "image": "/uploads/images/fast_gen.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects with extended rights"
+            "description": "Use generated music for commercial projects with extended rights",
+            "image": "/uploads/images/commercial_use.png"
           }
         ],
         "yearly": [
           {
+            "index": 1,
             "title": "Unlimited generations",
-            "description": "Create unlimited AI-generated songs annually"
+            "description": "Create unlimited AI-generated songs annually",
+            "image": "/uploads/images/unlimited_generations.png"
           },
           {
+            "index": 2,
             "title": "Unlimited downloads",
-            "description": "Download as many songs as you want"
+            "description": "Download as many songs as you want",
+            "image": "/uploads/images/unlimited_download.png"
           },
           {
+            "index": 3,
             "title": "Unlock all features",
-            "description": "Access to all music creation tools and features"
+            "description": "Access to all music creation tools and features",
+            "image": "/uploads/images/unlock_all_features.png"
           },
           {
+            "index": 4,
             "title": "Fast generation",
-            "description": "Generate songs at 4x the standard speed"
+            "description": "Generate songs at 4x the standard speed",
+            "image": "/uploads/images/fast_gen.png"
           },
           {
+            "index": 5,
             "title": "Commercial use",
-            "description": "Use generated music for commercial projects with extended rights"
+            "description": "Use generated music for commercial projects with extended rights",
+            "image": "/uploads/images/commercial_use.png"
           }
         ]
       }
