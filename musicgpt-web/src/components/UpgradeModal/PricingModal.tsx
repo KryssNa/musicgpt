@@ -123,9 +123,9 @@ export default function UpgradeModal({ open, onClose }: UpgradeModalProps) {
                     <motion.div
                         key="default"
                         className="w-full h-full"
-                        initial={{ opacity: 0, x: 40, scale: 0.98 }}
-                        animate={{ opacity: 1, x: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }}
-                        exit={{ opacity: 0, x: -40, scale: 0.98, transition: { duration: 0.4, ease: "easeIn" } }}
+                        initial={{ opacity: 0, x: 20, scale: 0.98 }}
+                        animate={{ opacity: 1, x: 0, scale: 1, transition: { duration: 0.4, ease: "easeOut" } }}
+                        exit={{ opacity: 0, x: -20, scale: 0.98, transition: { duration: 0.3, ease: "easeIn" } }}
                     >
                         <Image
                             src="/assets/images/popup/default.png"
