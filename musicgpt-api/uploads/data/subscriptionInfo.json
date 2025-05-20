@@ -14,7 +14,7 @@
           "index": 1,
           "title": "Generate 100 songs /month",
           "description": "Create up to 100 AI-generated songs per month",
-          "image": "/uploads/images/5kredit.png"
+          "image": "/uploads/images/5kcredit.png"
         },
         {
           "index": 2,
@@ -26,7 +26,7 @@
           "index": 3,
           "title": "Standard tool",
           "description": "Access to standard music creation tools",
-          "image": "/uploads/images/standardtool.png"
+          "image": "/uploads/images/standard_tool.png"
         },
         {
           "index": 4,
@@ -95,7 +95,7 @@
           "index": 2,
           "title": "Unlimited downloads",
           "description": "Download as many songs as you want",
-          "image": "/uploads/images/unlimiteddownload.png"
+          "image": "/uploads/images/unlimited_download.png"
         },
         {
           "index": 3,
@@ -164,7 +164,7 @@
           "index": 1,
           "title": "Unlimited generations",
           "description": "Create unlimited AI-generated songs annually",
-          "image": "/uploads/images/unlimited_generations.png"
+          "image": "/uploads/images/unlimited_credit.png"
         },
         {
           "index": 2,
@@ -196,7 +196,7 @@
           "index": 1,
           "title": "Unlimited generations",
           "description": "Create unlimited AI-generated songs annually",
-          "image": "/uploads/images/unlimited_generations.png"
+          "image": "/uploads/images/unlimited_credit.png"
         },
         {
           "index": 2,
